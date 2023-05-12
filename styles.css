@@ -1,0 +1,112 @@
+:root {
+  --fg: rgba(255, 255, 255, 0.81);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  /* outline: dashed #f0f0f055; */
+}
+
+p {
+  color: var(--fg);
+  text-align: center;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #191919;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: auto 1fr 1fr 1fr;
+}
+
+main * {
+  z-index: 12;
+}
+
+section,
+header {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-time p {
+  font-size: 10rem;
+  color: var(--fg);
+}
+
+.time-remaining p {
+  font-size: 1.5rem;
+}
+
+button,
+input {
+  background-color: transparent;
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  width: 20rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.info {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.hide {
+  opacity: 0;
+  transition: opacity 100ms;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 100ms;
+}
+
+
+.absolute-button {
+  opacity: 0.1;
+  position: absolute;
+  width: auto;
+  top: 0.5rem;
+  transition: opacity 200ms;
+}
+
+.absolute-button:hover {
+  opacity: 1;
+}
+
+#showhideui {
+  left: 0.5rem;
+}
+
+#startstopfire {
+  left: 5.5rem;
+}
+
+#canvas {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Clock</title>
+</head>
+
+<body>
+  <main>
+    <header class="ui show">
+      <button id="btnSetPomodoro25">Set pomodoro (15 minutes)</button>
+      <button id="btnSetPomodoro05">Set pause (05 minutes)</button>
+      <input type="time" id="targetTime">
+    </header>
+    <section class="spacer"></section>
+    <section class="main-time">
+      <p id="time"></p>
+    </section>
+    <section class="ui show">
+      <div id="targetCustom" class="time-remaining hide">
+        <p>Faltam <span name="time-remaining"></span> para <span name="target-time"></span></p>
+      </div>
+      <div id="pomodoro25" class="time-remaining hide">
+        <p>Próxima pausa em <span name="time-remaining"></span></p>
+        <p class="info">(<span name="target-time"></span>)</p>
+      </div>
+      <div id="pomodoro05" class="time-remaining hide">
+        <p>Próximo pomodoro em <span name="time-remaining"></span></p>
+        <p class="info">(<span name="target-time"></span>)</p>
+        </div>
+    </section>
+
+    <button id="showhideui" class="absolute-button">hide</button>
+    <button id="startstopfire" class="absolute-button">show fire</button>
+    <canvas id="canvas" width="1600" height="900"></canvas>
+  </main>
+  <script src="./code.js"></script>
+  <script src="./doom.js"></script>
+  <!-- <script src="./doom01.js"></script> -->
+</body>
+
+</html>
