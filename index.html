@@ -10,34 +10,72 @@
 </head>
 
 <body>
-  <main>
-    <header class="ui show">
-      <button id="btnSetPomodoro25">Set pomodoro (25 minutes)</button>
-      <button id="btnSetPomodoro05">Set pause (05 minutes)</button>
-      <input type="time" id="targetTime">
-    </header>
-    <section class="spacer"></section>
-    <section class="main-time">
-      <p id="time"></p>
-    </section>
-    <section class="ui show">
-      <div id="targetCustom" class="time-remaining hide">
-        <p>Faltam <span name="time-remaining"></span> para <span name="target-time"></span></p>
-      </div>
-      <div id="pomodoro25" class="time-remaining hide">
-        <p>Próxima pausa em <span name="time-remaining"></span></p>
-        <p class="info">(<span name="target-time"></span>)</p>
-      </div>
-      <div id="pomodoro05" class="time-remaining hide">
-        <p>Próximo pomodoro em <span name="time-remaining"></span></p>
-        <p class="info">(<span name="target-time"></span>)</p>
-        </div>
-    </section>
-
+  <div class="wrapper">
     <button id="showhideui" class="absolute-button">hide</button>
-    <button id="startstopfire" class="absolute-button">show fire</button>
-    <canvas id="canvas" width="1600" height="900"></canvas>
-  </main>
+    <aside class="show">
+      <div class="fixed-width">
+        <button id="startstopfire">show fire</button>
+        <section id="pomodoro">
+          <h1>Pomodoro:</h1>
+          <button class="minus">-</button>
+          <input type="number" class="input">
+          <button class="plus">+</button>
+          <button class="start-stop">Start</button>
+          <button class="reset">*</button>
+        </section>
+        <section id="pause">
+          <h1>Pause:</h1>
+          <button class="minus">-</button>
+          <input type="number" class="input">
+          <button class="plus">+</button>
+          <button class="start-stop">Start</button>
+          <button class="reset">*</button>
+        </section>
+        <section id="stopwatch">
+          <h1>Stopwatch:</h1>
+          <button class="minus">-</button>
+          <input type="number" class="input">
+          <button class="plus">+</button>
+          <button class="start-stop">Start</button>
+          <button class="reset">*</button>
+        </section>
+        <div>
+          <h1>Custom Time:</h1>
+          <input type="time" id="custom-handler">
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="ui show">
+        <div id="custom-handler-txt" class="time-remaining hide">
+          <p>Faltam <span name="time-remaining"></span> para <span name="target-time"></span></p>
+        </div>
+        <div id="pomodoro-txt" class="time-remaining hide">
+          <p>Próxima pausa em <span name="time-remaining"></span></p>
+          <p class="info">(<span name="target-time"></span>)</p>
+        </div>
+        <div id="pause-txt" class="time-remaining hide">
+          <p>Próximo pomodoro em <span name="time-remaining"></span></p>
+          <p class="info">(<span name="target-time"></span>)</p>
+        </div>
+        <div id="stopwatch-txt" class="time-remaining hide">
+          <p>
+            <span name="time-remaining"></span>
+            desde
+            <span name="target-time"></span>
+          </p>
+        </div>
+      </section>
+      <p id="time"></p>
+    </main>
+  </div>
+
+  <canvas id="canvas" width="1600" height="900"></canvas>
+
+  <script src="./utils.js"></script>
+  <script src="./timers.js"></script>
+  <script src="./ui.js"></script>
   <script src="./code.js"></script>
   <script src="./doom.js"></script>
   <!-- <script src="./doom01.js"></script> -->
