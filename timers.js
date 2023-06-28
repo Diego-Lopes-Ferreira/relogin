@@ -47,4 +47,9 @@ class Timer {
     date.setSeconds(date.getSeconds() + this.seconds);
     return generateTimeStrByDate(date, true, false);
   }
+  getStartedStr() {
+    let date = new Date();
+    date.setSeconds(date.getSeconds() - this.seconds);
+    return generateTimeStrByDate(date, true, false);
+  }
 }
