@@ -35,7 +35,8 @@ class Timer {
 
   update() {
     if (!this.running) return;
-    this.seconds += this.incrementValue;
+    this.addToSeconds(this.incrementValue);
+    if (this.seconds == 0) this.end();
   }
   getTimeStr() {
     let dontShowHours = this.seconds < 3600;
