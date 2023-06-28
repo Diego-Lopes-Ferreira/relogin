@@ -84,7 +84,7 @@ class StopWatchHandler extends GenericHandler {
     this.target.update();
     this.input.value = this.target.seconds;
     this.txtTimeRemaining.textContent = this.target.getTimeStr();
-    this.txtTargetTime.textContent = this.target.getTargetStr();
+    this.txtTargetTime.textContent = this.target.getStartedStr();
   }
   _handleMinusTarget() {
     this.target.addToSeconds(-1);
@@ -101,7 +101,21 @@ class StopWatchHandler extends GenericHandler {
   }
   _handleStartStop() {
     changeUiElementVisibility(this.txtHolder, true);
-    this.target.pauseResume();
+    if (this.state == "off") {
+      this.state = "on";
+      this.target.pauseResume();
+      return;
+    }
+    if (this.state == "on") {
+      this.state = "paused";
+      this.target.pauseResume();
+      return;
+    }
+    if (this.state == "paused") {
+      this.state = "on";
+      this.target.pauseResume();
+      return;
+    }
   }
 }
 
