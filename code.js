@@ -17,6 +17,9 @@ function update() {
   stopwatch.update();
   custom.update();
   mainTextTime.textContent = generateTimeStrByDate();
+  navigator.getBattery().then(battery => 
+    document.querySelector("#battery").textContent = battery.level*100 + "%"
+  );
   setTimeout(update, 1000);
 }
 update();

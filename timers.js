@@ -53,3 +53,28 @@ class Timer {
     return generateTimeStrByDate(date, true, false);
   }
 }
+
+
+class Timer2 {
+  constructor () {
+    this.time = undefined;
+    this.diff = 0; // s
+  }
+
+  setTime(newTime) { this.time = newTime; }
+  getTimeStr() { return generateTimeStrByDate(this.time, true, false); }
+  _calcDiff(now) {
+    if (this.time === undefined) return 0;
+    this.diff = now - this.time;
+  }
+  getRemainingTimeStr() {
+    let remaining = this._calcDiff(new Date()); // now
+    if (remaining > 0) return false;
+    remaining *= -1;
+    return generateTimeStrBySeconds(remaining, false, remaining < 3600);
+  }
+  getPassedTimeStr() {
+    this._calcDiff(new Date()); // now
+    return generateTimeStrBySeconds(this.diff, false, this.diff < 3600);
+  }
+}
