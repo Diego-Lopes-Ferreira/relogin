@@ -4,14 +4,14 @@ const blockSize = 10; // px
 const canvasWidth = canvas.width;
 const canvasHeight = canvas.height;
 const colors = [
-  "HSL(0, 0%, 100%)", // white
+  "HSL(0, 0%, 100%)",   // white
   "HSL(40, 100%, 50%)", // yellow
   "HSL(30, 100%, 50%)", // orange light
   "HSL(20, 100%, 50%)", // orange normal
   "HSL(10, 100%, 50%)", // orange dark
   "HSL(0, 100%, 50%)",  // red
   // "HSL(0, 100%, 0%)", // black
-  "RGBA(0, 0, 0, 0)", // transparent
+  "RGBA(0, 0, 0, 0)",   // transparent
 ];
 const maxIndex = colors.length - 1;
 const fireH = 40;
@@ -78,4 +78,3 @@ btnStartStopFire.onclick = () => {
   doomFireUpdate();
   btnStartStopFire.textContent = isFireGoing ? "hide fire" : "show fire";
 }
-
